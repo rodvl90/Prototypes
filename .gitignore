@@ -1,0 +1,13 @@
+.env
+/.vscode/
+fastapi/venv
+gradio_openai_stream/__pycache__
+gradio_openai_stream/venv
+langchain_env
+toke_classification/__pycache__
+toke_classification/nervenv
+fastapi/__pycache__
+leafwell/data.zip
+leafwell/data
+redis/__pycache__
+redis/venv
