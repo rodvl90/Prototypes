@@ -1,11 +1,11 @@
 from typing import Any, Dict, Generator, List
 
-from fastapi import FastAPI
 from pydantic import BaseModel
 
 import openai
+from fastapi import FastAPI
 
-openai.api_key = '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'
+openai.api_key = '...'
 
 app = FastAPI()
 

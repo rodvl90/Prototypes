@@ -18,7 +18,7 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 
-api_key = "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"
+api_key = "..."
 openai.api_key = api_key
 class Message(BaseModel):
     role: str

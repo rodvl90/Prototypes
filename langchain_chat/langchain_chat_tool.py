@@ -1,23 +1,21 @@
-from langchain.agents import AgentType
-from langchain.chat_models import ChatOpenAI
-from langchain.agents import initialize_agent
+from langchain.agents import AgentType, initialize_agent
 from langchain.agents.agent_toolkits import PlayWrightBrowserToolkit
-from langchain.tools.playwright.utils import (
-    create_async_playwright_browser,
-    create_sync_playwright_browser, # A synchronous browser is available, though it isn't compatible with jupyter.
-)
-from langchain.prompts import MessagesPlaceholder
-from langchain.memory import ConversationBufferMemory
 from langchain.callbacks.streaming_stdout_final_only import (
     FinalStreamingStdOutCallbackHandler,
 )
-
+from langchain.chat_models import ChatOpenAI
+from langchain.memory import ConversationBufferMemory
+from langchain.prompts import MessagesPlaceholder
+from langchain.tools.playwright.utils import (
+    create_sync_playwright_browser,  # A synchronous browser is available, though it isn't compatible with jupyter.
+)
+from langchain.tools.playwright.utils import create_async_playwright_browser
 
 chat_history = MessagesPlaceholder(variable_name="chat_history")
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
 llm = ChatOpenAI(
-    openai_api_key = "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",
+    openai_api_key = "...",
     temperature=0,
     streaming=True,
     callbacks=[FinalStreamingStdOutCallbackHandler()]
